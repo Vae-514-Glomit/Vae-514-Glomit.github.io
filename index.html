@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jialin Cao</title>
+  <meta name="description" content="Academic homepage of Jialin Cao, Master's Student at Nanjing University." />
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fbff 0%, #f7f9fc 100%);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 249, 252, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+    }
+
+    .hero-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 32px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      border: 1px solid #c7d2fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e3a8a;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 18px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta li {
+      background: var(--accent-soft);
+      color: #1e3a8a;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 0.92rem;
+      border: 1px solid #bfdbfe;
+    }
+
+    .section {
+      padding: 18px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 1.4rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .list li + li {
+      margin-top: 10px;
+    }
+
+    .placeholder {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .footer {
+      padding: 8px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .button-link:hover {
+      text-decoration: none;
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 760px) {
+      .hero-card {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 18px;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Jialin Cao</div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="avatar">Add Your Photo</div>
+        <div>
+          <h1>Jialin Cao</h1>
+          <div class="subtitle">
+            Master’s Student, School of Artificial Intelligence, Nanjing University<br />
+            Member of the Natural Language Processing Research Group, Nanjing University
+          </div>
+          <p>
+            Welcome to my academic homepage. I am a Master’s student at the School of Artificial Intelligence,
+            Nanjing University, enrolled in 2025, and a member of the Natural Language Processing Research Group.
+          </p>
+          <ul class="meta">
+            <li>Nanjing University</li>
+            <li>School of Artificial Intelligence</li>
+            <li>Natural Language Processing</li>
+            <li>Artificial Intelligence</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="card">
+        <h2>About</h2>
+        <p>
+          I am Jialin Cao, a Master’s student in the School of Artificial Intelligence at Nanjing University.
+          I joined the program in 2025 and am currently a member of the Natural Language Processing Research Group
+          at Nanjing University.
+        </p>
+        <p>
+          My research interests include Natural Language Processing and Artificial Intelligence. This homepage serves
+          as my academic profile and will be updated with publications, projects, and research activities.
+        </p>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="card">
+        <h2>Education</h2>
+        <div class="item-title">Nanjing University</div>
+        <div class="muted">Master’s Student, School of Artificial Intelligence · 2025–Present</div>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="two-col">
+        <div class="card">
+          <h2>Research Interests</h2>
+          <ul class="list">
+            <li>Natural Language Processing</li>
+            <li>Artificial Intelligence</li>
+            <li>Large Language Models</li>
+            <li>Multimodal AI</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Affiliation</h2>
+          <div class="item-title">Natural Language Processing Research Group</div>
+          <div class="muted">Nanjing University</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <div class="card">
+        <h2>Publications</h2>
+        <p class="placeholder">Publications will be updated here in the future.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="card">
+        <h2>Projects</h2>
+        <p class="placeholder">Project information will be updated here in the future.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="card">
+        <h2>Contact</h2>
+        <p><strong>Email:</strong> <a href="mailto:caojl@smail.nju.edu.cn">caojl@smail.nju.edu.cn</a></p>
+        <div class="contact-links">
+          <a class="button-link" href="mailto:caojl@smail.nju.edu.cn">Email</a>
+          <a class="button-link" href="#">Google Scholar</a>
+          <a class="button-link" href="#">ORCID</a>
+          <a class="button-link" href="#">GitHub</a>
+          <a class="button-link" href="#">CV</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    © 2026 Jialin Cao. Last updated: March 2026.
+  </footer>
+</body>
+</html>
